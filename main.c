@@ -288,7 +288,11 @@ int main() {
     printf("  Integrantes:                             \n");
     printf("    - Joao Flavio Pedroso do Carmo                             \n");
     printf("    - Kerlon Ramirez Oliveria Rodrigues                             \n");
-    printf("    - [Nome 3]                             \n");
+    printf("    - Arthur Jose Araujo Mota                             \n");
+    printf("    - Victor Rafael Bezerra Sampaio                             \n");
+    printf("    - Francisco Yuri Diogenes Gomes                             \n");
+    printf("    - Jose Ernesto Carvalho Oliveira                             \n");
+    
     printf("============================================\n");
     printf("  Bem-vindo! Selecione uma opcao no menu.  \n");
     printf("============================================\n");
