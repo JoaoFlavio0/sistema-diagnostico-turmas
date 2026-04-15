@@ -211,11 +211,6 @@ void menu_visualizar_diagnostico() {
 
 // ========================== KERLON ===============================
 
-/* -----------------------------------------------------------------
- * FUNCAO: menu_registrar_evasao (Opcao 3)
- * OBJETIVO: Salvar texto com espacos (motivo) e aplicar coversao 
- * de tipos (int -> double) exigida nos requisitos do PDF.
- * ----------------------------------------------------------------- */
 void menu_registrar_evasao() {
     printf("\n--- REGISTRAR EVASAO ---\n");
 
@@ -225,20 +220,18 @@ void menu_registrar_evasao() {
         return;
     }
 
-    // Limpa buffer
     while (getchar() != '\n');
 
-    // Entrada do motivo
+  
     printf("Motivo da evasao: ");
     fgets(motivos_evasao[total_evasoes], 200, stdin);
 
-    // Remove o \n
     int tamanho = strlen(motivos_evasao[total_evasoes]);
     if (tamanho > 0 && motivos_evasao[total_evasoes][tamanho - 1] == '\n') {
         motivos_evasao[total_evasoes][tamanho - 1] = '\0';
     }
 
-    // Entrada das aulas perdidas
+
     printf("Quantas aulas o aluno perdeu? ");
     while (scanf("%d", &aulas_perdidas_evasao[total_evasoes]) != 1 
            || aulas_perdidas_evasao[total_evasoes] < 0) {
@@ -247,14 +240,10 @@ void menu_registrar_evasao() {
         printf("Erro! Digite um numero inteiro nao negativo: ");
     }
 
-    // Conversão de aulas para minutos (45 min cada)
     int minutos_perdidos = aulas_perdidas_evasao[total_evasoes] * 45;
-
-    // 🔥 Conversão exigida pelo trabalho (mantida, mas não exibida)
     double minutos_db = (double)minutos_perdidos;
     int minutos_retorno = (int)minutos_db;
 
-    // Saída correta (amigável)
     printf("\n--- Evasao registrada com sucesso! ---\n");
     printf("Motivo: %s\n", motivos_evasao[total_evasoes]);
     printf("Tempo perdido: ");
